@@ -2397,4 +2397,81 @@ describe('Spanner', () => {
         .emit('reading');
     });
   });
+
+  describe('close', () => {
+    it('should close all cached clients', async () => {
+      const fakeClient = {
+        close: sandbox.stub().resolves(),
+      };
+      spanner.clients_.set('fake-client', fakeClient);
+
+      await spanner.close();
+
+      assert.strictEqual(fakeClient.close.callCount, 1);
+    });
+
+    it('should close operations client if exists', async () => {
+      const fakeOperationsClient = {
+        close: sandbox.stub().resolves(),
+      };
+      const fakeClient = {
+        close: sandbox.stub().resolves(),
+        operationsClient: fakeOperationsClient,
+      };
+      spanner.clients_.set('fake-client', fakeClient);
+
+      await spanner.close();
+
+      assert.strictEqual(fakeOperationsClient.close.callCount, 1);
+      assert.strictEqual(fakeClient.close.callCount, 1);
+    });
+
+    it('should not throw if callback is omitted', async () => {
+      await spanner.close();
+    });
+
+    it('should pass error to callback if closing a client fails', async () => {
+      const error = new Error('err');
+      const fakeClient = {
+        close: sandbox.stub().rejects(error),
+      };
+      spanner.clients_.set('fake-client', fakeClient);
+
+      await new Promise<void>((resolve, reject) => {
+        spanner.close(err => {
+          try {
+            assert.strictEqual(err, error);
+            resolve();
+          } catch (e) {
+            reject(e);
+          }
+        });
+      });
+    });
+
+    it('should log error if closing a client fails and callback is omitted', async () => {
+      const error = new Error('err');
+      const fakeClient = {
+        close: sandbox.stub().rejects(error),
+      };
+      spanner.clients_.set('fake-client', fakeClient);
+      
+      await new Promise<void>((resolve, reject) => {
+        sandbox.stub(console, 'error').callsFake((msg, err_) => {
+          try {
+            assert.strictEqual(msg, 'Error occurred during cleanup: ');
+            assert.strictEqual(err_, error);
+            resolve();
+          } catch (e) {
+            reject(e);
+          }
+        });
+
+        const result = spanner.close() as unknown as Promise<void>;
+        if (result && typeof result.catch === 'function') {
+          result.catch(() => {});
+        }
+      });
+    });
+  });
 });
