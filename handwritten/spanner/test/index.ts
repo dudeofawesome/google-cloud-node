@@ -2455,7 +2455,7 @@ describe('Spanner', () => {
         close: sandbox.stub().rejects(error),
       };
       spanner.clients_.set('fake-client', fakeClient);
-      
+
       await new Promise<void>((resolve, reject) => {
         sandbox.stub(console, 'error').callsFake((msg, err_) => {
           try {
