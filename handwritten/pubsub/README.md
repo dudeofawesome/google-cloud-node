@@ -106,3 +106,4 @@ See [LICENSE](https://github.com/googleapis/google-cloud-node/blob/main/packages
 [homepage_samples]: https://github.com/googleapis/google-cloud-node/blob/main/packages/google-pubsub/samples
 [homepage_changelog]: https://github.com/googleapis/google-cloud-node/blob/main/packages/google-pubsub/CHANGELOG.md
 [homepage]: https://github.com/googleapis/google-cloud-node/blob/main/packages/google-pubsub
+
