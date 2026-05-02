@@ -232,9 +232,7 @@ describe('Spanner', () => {
       'grpc.callInvocationTransformer':
         fakeGrpcGcp().gcpCallInvocationTransformer,
       'grpc.channelFactoryOverride': fakeGrpcGcp().gcpChannelFactoryOverride,
-      'grpc.gcpApiConfig': {
-        calledWith_: apiConfig,
-      },
+      'grpc.gcpApiConfig': apiConfig,
     });
 
     it('should localize a cached gapic client map', () => {

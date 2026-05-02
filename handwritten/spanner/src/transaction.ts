@@ -55,6 +55,9 @@ import {
 } from './instrument';
 import {RunTransactionOptions} from './transaction-runner';
 import {injectRequestIDIntoHeaders, nextNthRequest} from './request_id_header';
+import * as uuid from 'uuid';
+
+const gcpApiConfig = require('./spanner_grpc_config.json');
 
 export type Rows = Array<Row | Json>;
 const RETRY_INFO_TYPE = 'type.googleapis.com/google.rpc.retryinfo';
@@ -296,6 +299,7 @@ export class Snapshot extends EventEmitter {
     | undefined
     | null;
   id?: Uint8Array | string;
+  public _affinityKey?: string;
   multiplexedSessionPreviousTransactionId?: Uint8Array | string;
   ended: boolean;
   metadata?: spannerClient.spanner.v1.ITransaction;
@@ -365,8 +369,39 @@ export class Snapshot extends EventEmitter {
     this.ended = false;
     this.session = session;
     this.queryOptions = Object.assign({}, queryOptions);
-    this.request = session.request.bind(session);
-    this.requestStream = session.requestStream.bind(session);
+    // If the session is multiplexed, generate a unique affinity key (UUID) for this
+    // specific transaction/snapshot. This allows requests using the same shared
+    // multiplexed session to be distributed across different gRPC channels.
+    if (session.metadata && session.metadata.multiplexed) {
+      this._affinityKey = uuid.v4();
+    }
+    const getMetadataHeaderName = (rpcMethodName: string): string => {
+      const method =
+        rpcMethodName.charAt(0).toUpperCase() + rpcMethodName.slice(1);
+      const fullRpcPath = `/google.spanner.v1.Spanner/${method}`;
+      const methodConfig = gcpApiConfig.method.find(m =>
+        m.name.includes(fullRpcPath),
+      );
+      return methodConfig?.affinity?.metadataKey || 'x-grpc-gcp-affinity-key';
+    };
+
+    this.request = (config: any, callback: Function) => {
+      if (this._affinityKey) {
+        const headerName = getMetadataHeaderName(config.method);
+        config.headers = config.headers || {};
+        config.headers[headerName] = this._affinityKey;
+      }
+      return session.request(config, callback);
+    };
+
+    this.requestStream = (config: any) => {
+      if (this._affinityKey) {
+        const headerName = getMetadataHeaderName(config.method);
+        config.headers = config.headers || {};
+        config.headers[headerName] = this._affinityKey;
+      }
+      return session.requestStream(config);
+    };
 
     const readOnly = Snapshot.encodeTimestampBounds(options || {});
     this._options = {readOnly};
@@ -1324,7 +1359,7 @@ export class Snapshot extends EventEmitter {
    * options as well as several convenience properties.
    *
    * @see [Query Syntax](https://cloud.google.com/spanner/docs/query-syntax)
-   * @see [ExecuteSql API Documentation](https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Spanner.ExecuteSql)
+   * @see [ExecuteSql API Documentation](https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.ExecuteSql)
    *
    * @typedef {object} ExecuteSqlRequest
    * @property {string} resumeToken The token used to resume getting results.
@@ -2453,6 +2488,20 @@ export class Transaction extends Dml {
           addLeaderAwareRoutingHeader(headers);
         }
 
+        // Create a copy to avoid leaking the unbind header to the global commonHeaders_.
+        const requestHeaders = Object.assign({}, headers);
+
+        // Signal to grpc-gcp to unbind the affinity key and clean up memory
+        // since this transaction is now complete.
+        if (this._affinityKey) {
+          const commitConfig = gcpApiConfig.method.find(m =>
+            m.name.includes('/google.spanner.v1.Spanner/Commit'),
+          );
+          const unbindHeaderName =
+            commitConfig?.affinity?.unbindMetadataKey || 'x-grpc-gcp-unbind';
+          requestHeaders[unbindHeaderName] = 'true';
+        }
+
         span.addEvent('Starting Commit');
 
         const database = this.session.parent as Database;
@@ -2463,7 +2512,7 @@ export class Transaction extends Dml {
             reqOpts,
             gaxOpts: gaxOpts,
             headers: injectRequestIDIntoHeaders(
-              headers,
+              requestHeaders,
               this.session,
               nextNthRequest(database),
               1,
@@ -2819,13 +2868,27 @@ export class Transaction extends Dml {
         addLeaderAwareRoutingHeader(headers);
       }
 
+      // Create a copy to avoid leaking the unbind header to the global commonHeaders_.
+      const requestHeaders = Object.assign({}, headers);
+
+      // Signal to grpc-gcp to unbind the affinity key and clean up memory
+      // since this transaction is now complete.
+      if (this._affinityKey) {
+        const rollbackConfig = gcpApiConfig.method.find(m =>
+          m.name.includes('/google.spanner.v1.Spanner/Rollback'),
+        );
+        const unbindHeaderName =
+          rollbackConfig?.affinity?.unbindMetadataKey || 'x-grpc-gcp-unbind';
+        requestHeaders[unbindHeaderName] = 'true';
+      }
+
       this.request(
         {
           client: 'SpannerClient',
           method: 'rollback',
           reqOpts,
           gaxOpts,
-          headers: headers,
+          headers: requestHeaders,
         },
         (err: null | ServiceError) => {
           if (err) {

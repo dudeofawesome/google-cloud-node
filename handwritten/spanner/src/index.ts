@@ -424,7 +424,8 @@ class Spanner extends GrpcService {
         // Enable grpc-gcp support
         'grpc.callInvocationTransformer': grpcGcp.gcpCallInvocationTransformer,
         'grpc.channelFactoryOverride': grpcGcp.gcpChannelFactoryOverride,
-        'grpc.gcpApiConfig': grpcGcp.createGcpApiConfig(gcpApiConfig),
+        // Bypass createGcpApiConfig to preserve our custom metadata fields
+        'grpc.gcpApiConfig': gcpApiConfig,
         grpc,
       },
       options || {},
