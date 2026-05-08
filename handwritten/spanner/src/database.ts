@@ -471,6 +471,7 @@ class Database extends common.GrpcServiceObject {
 
     this.formattedName_ = formattedName_;
     this.instance = instance;
+    this.spanner = instance.parent as Spanner;
 
     const poolOpts = typeof poolOptions === 'object' ? poolOptions : null;
     this.databaseRole = databaseRole || poolOpts?.databaseRole || null;

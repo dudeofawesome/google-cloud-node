@@ -29,67 +29,49 @@
       "name": ["/google.spanner.v1.Spanner/ExecuteSql"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/ExecuteStreamingSql"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/Read"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/StreamingRead"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/BeginTransaction"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/Commit"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key",
-        "unbindKeyLocation": "METADATA",
-        "unbindMetadataKey": "x-grpc-gcp-unbind"
+        "affinityKey": "session"
       }
     },
     {
       "name": ["/google.spanner.v1.Spanner/Rollback"],
       "affinity": {
         "command": "BOUND",
-        "affinityKey": "session",
-        "affinityKeyLocation": "METADATA",
-        "metadataKey": "x-grpc-gcp-affinity-key",
-        "unbindKeyLocation": "METADATA",
-        "unbindMetadataKey": "x-grpc-gcp-unbind"
+        "affinityKey": "session"
       }
     },
     {
