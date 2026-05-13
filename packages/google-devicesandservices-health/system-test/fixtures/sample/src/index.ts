@@ -16,13 +16,18 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DataPointsServiceClient, HealthProfileServiceClient} from '@google-cloud/health';
+import {
+  DataPointsServiceClient,
+  HealthProfileServiceClient,
+} from '@google-cloud/health';
 
 // check that the client class type name can be used
 function doStuffWithDataPointsServiceClient(client: DataPointsServiceClient) {
   client.close();
 }
-function doStuffWithHealthProfileServiceClient(client: HealthProfileServiceClient) {
+function doStuffWithHealthProfileServiceClient(
+  client: HealthProfileServiceClient,
+) {
   client.close();
 }
 
