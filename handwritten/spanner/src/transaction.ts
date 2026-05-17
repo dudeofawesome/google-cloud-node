@@ -75,6 +75,8 @@ export type Rows = Array<Row | Json>;
 const RETRY_INFO_TYPE = 'type.googleapis.com/google.rpc.retryinfo';
 const RETRY_INFO_BIN = 'google.rpc.retryinfo-bin';
 
+let nextAffinityId = 0;
+
 export interface TimestampBounds {
   strong?: boolean;
   minReadTimestamp?: PreciseDate | spannerClient.protobuf.ITimestamp;
@@ -385,7 +387,7 @@ export class Snapshot extends EventEmitter {
     // specific transaction/snapshot. This allows requests using the same shared
     // multiplexed session to be distributed across different gRPC channels.
     if (session.metadata && session.metadata.multiplexed) {
-      this._affinityKey = uuid.v4();
+      this._affinityKey = `mux-affinity-${process.pid}-${nextAffinityId++}`;
     }
     this.request = (config: any, callback: Function) => {
       if (this._affinityKey) {
