@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [4.12.0](https://github.com/googleapis/google-cloud-node/compare/gapic-generator-v4.11.14...gapic-generator-v4.12.0) (2026-05-19)
+
+
+### Features
+
+* Clean up per-package eslintrc configurations ([b053d0e](https://github.com/googleapis/google-cloud-node/commit/b053d0edfa1ade74ce069279af86f058c77a589b))
+
 ## [4.11.14](https://github.com/googleapis/google-cloud-node/compare/gapic-generator-v4.11.13...gapic-generator-v4.11.14) (2026-05-11)
 
 
