@@ -5,6 +5,443 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "0.2.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/databasecenter",
+      "id": "d12b4009-9ab9-40eb-a61c-9225bea237aa",
+      "createTime": "2026-05-19T21:49:50.407Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "0.2.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/health",
+      "id": "166d8ab5-042c-46f4-8c33-b480b80cce44",
+      "createTime": "2026-05-19T21:49:50.401Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "0.2.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/appoptimize",
+      "id": "04e13fb8-cfe9-408c-97e5-d511abe37a30",
+      "createTime": "2026-05-19T21:49:50.394Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "6.9.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/container",
+      "id": "84c24a87-ad04-4628-829e-0766d4ddc6a5",
+      "createTime": "2026-05-19T21:49:50.387Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e9ad85f0db9570343fb0625579fb9ee484280b59",
+          "message": "Add folders and teamFolders related changes to v1",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "e9ad85f0db9570343fb0625579fb9ee484280b59",
+          "message": "Update GCP Client Libraries in v1beta1 to support Folders, TeamFolders, and other relevant APIs",
+          "issues": []
+        }
+      ],
+      "version": "2.3.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/dataform",
+      "id": "020e3f8a-a028-4e82-a6a8-c3e8f782d73b",
+      "createTime": "2026-05-19T21:49:50.380Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "6.12.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/compute",
+      "id": "28f3b0e0-fd67-4546-8175-cc837af4ffc1",
+      "createTime": "2026-05-19T21:49:50.370Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b053d0edfa1ade74ce069279af86f058c77a589b",
+          "message": "Clean up per-package eslintrc configurations",
+          "issues": []
+        }
+      ],
+      "version": "6.1.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-analytics/data",
+      "id": "391546b2-226e-4c9b-821c-05660bde3dbf",
+      "createTime": "2026-05-19T21:49:50.361Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new PUBLIC dimension: CREATIVE_SSL_COMPLIANCE_OVERRIDE_NAME",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new API dimension: CREATIVE_SSL_SCAN_RESULT",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new PUBLIC dimension: CREATIVE_SSL_SCAN_RESULT_NAME",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new PUBLIC metric: AD_SERVER_ACTIVE_VIEW_REVENUE",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new PUBLIC dimension: LINE_ITEM_AVERAGE_NUMBER_OF_VIEWERS",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "An existing value `DEMAND_SUBCHANNEL_ALL` is removed from enum `Dimension`",
+          "issues": [],
+          "breakingChangeNote": "An existing value `DEMAND_SUBCHANNEL_ALL` is removed from enum `Dimension`"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Add readonly OAuth scope",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Add ProposalLineItem service and messages to the API.",
+          "issues": [],
+          "scope": "deals"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added new PUBLIC dimension: TARGETS_CUSTOMER_MATCHING_LIST",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Expose both `get` and `list` methods for RichMediaAdsCompanies to external clients.",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Changed field behavior for an existing field `display_name` in message `.google.ads.admanager.v1.Application`",
+          "issues": [],
+          "breakingChangeNote": "Changed field behavior for an existing field `display_name` in message `.google.ads.admanager.v1.Application`"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `ApplicationStoreEnum` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `ApplicationApprovalStatusEnum` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `ApplicationPlatformEnum` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `WebviewClaimingStatusEnum` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `app_store_id` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `app_stores` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `archived` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `app_store_display_name` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `application_code` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `developer` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `platform` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `free` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `download_url` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `approval_status` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new field `webview_claiming_status` is added to message `.google.ads.admanager.v1.Application`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `CreateApplication` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `BatchCreateApplications` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `UpdateApplication` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `BatchUpdateApplications` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `BatchArchiveApplications` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new method `BatchUnarchiveApplications` is added to service `ApplicationService`",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `CreateApplicationRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchCreateApplicationsRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchCreateApplicationsResponse` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `UpdateApplicationRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchUpdateApplicationsRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchUpdateApplicationsResponse` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchArchiveApplicationsRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchArchiveApplicationsResponse` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchUnarchiveApplicationsRequest` is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "A new message `BatchUnarchiveApplicationsResponse` is added",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Removed UNIFIED_PRICING_RULE_ID dimension",
+          "issues": [],
+          "breakingChangeNote": "Removed UNIFIED_PRICING_RULE_ID dimension"
+        },
+        {
+          "type": "fix",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Removed UNIFIED_PRICING_RULE_NAME dimension",
+          "issues": [],
+          "breakingChangeNote": "Removed UNIFIED_PRICING_RULE_NAME dimension"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added child publisher resource.",
+          "issues": [],
+          "scope": "child_publisher"
+        },
+        {
+          "type": "fix",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Remove unused AdManagerError type",
+          "issues": [],
+          "breakingChangeNote": "Remove unused AdManagerError type"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "Added McmEarnings service",
+          "issues": [],
+          "scope": "mcm_earnings"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "This is referenced for delegation_type in mcm_earnings",
+          "issues": [],
+          "scope": "DelegationTypeEnum"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "New REQUIRED field `display_name` in message `.google.ads.admanager.v1.Label`",
+          "issues": [],
+          "breakingChangeNote": "New REQUIRED field `display_name` in message `.google.ads.admanager.v1.Label`"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "New REQUIRED field `types` in message `.google.ads.admanager.v1.Label`",
+          "issues": [],
+          "breakingChangeNote": "New REQUIRED field `types` in message `.google.ads.admanager.v1.Label`"
+        },
+        {
+          "type": "feat",
+          "sha": "dfd3f1eb39ed1839f4d25729dd6143a97707c87c",
+          "message": "[admanager] added new API dimension: CREATIVE_SSL_COMPLIANCE_OVERRIDE",
+          "issues": []
+        }
+      ],
+      "version": "0.6.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-ads/admanager",
+      "id": "c5ff0a08-9929-4043-a121-b466fd9c2965",
+      "createTime": "2026-05-19T21:49:50.349Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "d67ad568b13e6b12c4d16b9b34dbde41b6eac4a5",
           "message": "[container] add confidential instance type and hyperdisk support to GKE API",
           "issues": [
@@ -78784,5 +79221,5 @@
       "createTime": "2023-01-28T04:18:24.718Z"
     }
   ],
-  "updateTime": "2026-05-14T00:02:24.695Z"
+  "updateTime": "2026-05-19T21:49:50.407Z"
 }
