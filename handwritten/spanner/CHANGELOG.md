@@ -5,6 +5,19 @@
 
 [1]: https://www.npmjs.com/package/nodejs-spanner?activeTab=versions
 
+## [8.8.0](https://github.com/googleapis/google-cloud-node/compare/spanner-v8.7.1...spanner-v8.8.0) (2026-05-19)
+
+
+### Features
+
+* **spanner:** `isolation_level` and `read_lock_mode` are added to message `.google.spanner.v1.CommitResponse` ([4715de9](https://github.com/googleapis/google-cloud-node/commit/4715de939397c0a08926076bb57c563dab240673))
+* **spanner:** Add cache updates API ([#8124](https://github.com/googleapis/google-cloud-node/issues/8124)) ([4715de9](https://github.com/googleapis/google-cloud-node/commit/4715de939397c0a08926076bb57c563dab240673))
+
+
+### Bug Fixes
+
+* Specify explicit destinations in spanner owlbot.py ([#8304](https://github.com/googleapis/google-cloud-node/issues/8304)) ([f81f0a6](https://github.com/googleapis/google-cloud-node/commit/f81f0a63fde72a238dcb987be90f0f93e0757f0e))
+
 ## [8.7.1](https://github.com/googleapis/google-cloud-node/compare/spanner-v8.7.0...spanner-v8.7.1) (2026-05-06)
 
 

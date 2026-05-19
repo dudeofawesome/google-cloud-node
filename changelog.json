@@ -4,6 +4,39 @@
     {
       "changes": [
         {
+          "type": "fix",
+          "sha": "f81f0a63fde72a238dcb987be90f0f93e0757f0e",
+          "message": "Specify explicit destinations in spanner owlbot.py",
+          "issues": [
+            "8304"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "4715de939397c0a08926076bb57c563dab240673",
+          "message": "Add cache updates API",
+          "issues": [
+            "8124"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "feat",
+          "sha": "4715de939397c0a08926076bb57c563dab240673",
+          "message": "`isolation_level` and `read_lock_mode` are added to message `.google.spanner.v1.CommitResponse`",
+          "issues": [],
+          "scope": "spanner"
+        }
+      ],
+      "version": "8.8.0",
+      "language": "JAVASCRIPT",
+      "artifactName": "@google-cloud/spanner",
+      "id": "95ee9e4c-9385-4b44-b160-914e610fcd41",
+      "createTime": "2026-05-19T21:54:45.501Z"
+    },
+    {
+      "changes": [
+        {
           "type": "feat",
           "sha": "d67ad568b13e6b12c4d16b9b34dbde41b6eac4a5",
           "message": "[container] add confidential instance type and hyperdisk support to GKE API",
@@ -78784,5 +78817,5 @@
       "createTime": "2023-01-28T04:18:24.718Z"
     }
   ],
-  "updateTime": "2026-05-14T00:02:24.695Z"
+  "updateTime": "2026-05-19T21:54:45.501Z"
 }
